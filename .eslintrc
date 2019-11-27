@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "prettier",
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "window": true,
+    "document": true
+  },
+  "env": {
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "jsx-a11y/label-has-associated-control": 0,
+    "class-methods-use-this": 1,
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": 1,
+    "react/no-array-index-key": 1,
+    "react/no-did-update-set-state": 1,
+    "react/display-name": 0,
+    "react/jsx-props-no-spreading": 1,
+    "react/state-in-constructor": 0,
+    "import/no-unresolved": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "prettier/prettier": "error"
+  }
+}
