@@ -6,21 +6,23 @@ import Header from 'components/Header';
 
 import styles from './MainTemplate.module.scss';
 
-const MainTemplate = ({ children }) => {
-  console.log(styles);
+const MainTemplate = ({ children, title }) => {
   return (
-    <>
-      <div className={styles.header__wrapper}>
-        <Header />
-      </div>
+    <div className={styles.mainTemplate}>
+      <Header title={title} />
       <Navigation />
       <main>{children}</main>
-    </>
+    </div>
   );
 };
 
 MainTemplate.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
+};
+
+MainTemplate.defaultProps = {
+  title: '',
 };
 
 export default MainTemplate;

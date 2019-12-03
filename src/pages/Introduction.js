@@ -3,7 +3,7 @@ import MainTemplate from 'templates/MainTemplate';
 
 const Introduction = () => {
   return (
-    <MainTemplate>
+    <MainTemplate title="About Marilyn Monroe">
       <span>Introduction route</span>
     </MainTemplate>
   );

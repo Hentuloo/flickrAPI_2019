@@ -1,0 +1,19 @@
+.header {
+  position: relative;
+  overflow: hidden;
+
+  &__image {
+    position: absolute;
+    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (min-width: 420px) {
+      transform: translate(-50%, -60%);
+    }
+    @media (min-width: 1100px) {
+      transform: translate(-50%, -70%);
+    }
+  }
+}

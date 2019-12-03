@@ -1,4 +1,4 @@
-.header__wrapper {
-  display: block;
-  background-color: var(--primary);
+.mainTemplate {
+  display: grid;
+  grid-template-rows: 30vh 80px 1fr;
 }

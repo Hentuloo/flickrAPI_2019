@@ -3,7 +3,7 @@ import MainTemplate from 'templates/MainTemplate';
 
 const Gallery = () => {
   return (
-    <MainTemplate>
+    <MainTemplate title="Marilyn Monroe Gallery">
       <span>Gallery route</span>
     </MainTemplate>
   );
