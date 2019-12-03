@@ -1,4 +1,11 @@
 .mainTemplate {
   display: grid;
   grid-template-rows: 30vh 50px 1fr;
+
+  @media (min-width: 760px) {
+    grid-template-rows: 30vh 60px 1fr;
+  }
+  @media (min-width: 1320px) {
+    grid-template-rows: 30vh 70px 1fr;
+  }
 }

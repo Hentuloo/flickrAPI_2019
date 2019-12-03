@@ -24,6 +24,7 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "camelcase": 0,
     "jsx-a11y/label-has-associated-control": 0,
     "class-methods-use-this": 1,
     "jsx-a11y/no-noninteractive-element-to-interactive-role": 1,
