@@ -1,0 +1,45 @@
+.navigation {
+    position: relative;
+    display: grid;
+    width: 100%;
+    background-color: var(--primary);
+    border-top: 1px var(--white) solid;
+
+    @media(min-width: 760px) {
+        padding: 0px 60px;
+    }
+
+    @media(min-width: 1400px) {
+        padding: 0px 400px;
+    }
+
+    &__list {
+        display: block;
+        justify-self: flex-end;
+        right: 10px;
+    }
+
+    &__person {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        bottom: -20px;
+        left: 40px;
+        border-radius: 50%;
+        border: 7px solid var(--transparent-white);
+        overflow: hidden;
+
+        @media(min-width: 760px) {
+            left: 80px;
+        }
+
+        @media(min-width: 1400px) {
+            left: 240px;
+        }
+
+        &_image {
+            max-width: 100%;
+            transform: scale(1.2) translate(5px, 10px);
+        }
+    }
+}
