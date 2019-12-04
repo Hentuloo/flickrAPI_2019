@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import Navigation from 'components/Navigation';
 import Header from 'components/Header';
 
-import styles from './MainTemplate.module.scss';
+import './MainTemplate.scss';
 
 const MainTemplate = ({ children, title }) => {
   return (
-    <div className={styles.mainTemplate}>
-      <Header title={title} />
-      <Navigation />
-      <main>{children}</main>
+    <div className="mainTemplate">
+      <Header className="mainTemplate__header" title={title} />
+      <Navigation className="mainTemplate__navigation" />
+      <main className="mainTemplate__content">{children}</main>
     </div>
   );
 };

@@ -1,0 +1,107 @@
+.navigation {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background-color: nth($primary, 1);
+  border-top: 1px nth($white, 1) solid;
+  font-size: 1.8rem;
+
+  @include mq(tablet) {
+    padding: 0px 60px;
+    font-size: 2rem;
+  }
+
+  @include mq(large) {
+    padding: 0px 400px;
+  }
+
+  &__nav {
+    display: block;
+    height: 100%;
+    justify-self: flex-end;
+    align-self: center;
+    right: 10px;
+
+    &-list {
+      display: flex;
+      height: 100%;
+      list-style: none;
+    }
+
+    &-element {
+      height: 100%;
+    }
+  }
+
+  &__link {
+    display: grid;
+    height: 100%;
+    align-items: center;
+    padding: 0px 10px;
+    color: nth($white, 1);
+
+    &:hover {
+      .navigation__link-inner {
+        background-color: nth($primary, 2);
+      }
+    }
+
+    &--active {
+      .navigation__link-inner {
+        border: 1px white solid;
+      }
+    }
+
+    &-inner {
+      display: grid;
+      width: 35px;
+      height: 35px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px transparent solid;
+
+      @include mq(tablet) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__person {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: -20px;
+    left: 40px;
+    border-radius: 50%;
+    border: 7px solid nth($white, 2);
+    overflow: hidden;
+
+    @include mq(tablet) {
+      left: 80px;
+      width: 130px;
+      height: 130px;
+    }
+
+    @include mq(large) {
+      left: 240px;
+      width: 150px;
+      height: 150px;
+    }
+
+    &-image {
+      max-width: 100%;
+      transform: scale(1.4) translate(5px, 10px);
+
+      @include mq(tablet) {
+        transform: scale(1.2) translate(5px, 10px);
+      }
+
+      @include mq(large) {
+        transform: scale(1.2) translate(5px, 10px);
+      }
+    }
+  }
+}

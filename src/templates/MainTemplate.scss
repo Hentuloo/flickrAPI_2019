@@ -2,10 +2,19 @@
   display: grid;
   grid-template-rows: 30vh 50px 1fr;
 
-  @media (min-width: 760px) {
+  @include mq(tablet) {
     grid-template-rows: 30vh 60px 1fr;
   }
-  @media (min-width: 1320px) {
+
+  @include mq(large) {
     grid-template-rows: 30vh 70px 1fr;
+  }
+
+  &__header {}
+
+  &__navigation {}
+
+  &__content {
+    margin-top: 20px;
   }
 }

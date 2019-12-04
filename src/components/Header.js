@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import HeaderImage from 'assets/images/sand.jpg';
-import styles from './Header.module.scss';
+import './Header.scss';
 
-const Header = ({ title }) => {
+const Header = ({ title, className }) => {
   return (
-    <header className={styles.header}>
-      {title && <h1 className="sr-only">{title}</h1>}
+    <header className={cx(className, 'header')}>
+      {title && <h1 className="header__headline sr-only">{title}</h1>}
       <img
-        className={styles.header__image}
+        className="header__image"
         src={HeaderImage}
         alt="Piasek i kamienie"
       />
@@ -18,9 +19,11 @@ const Header = ({ title }) => {
 
 Header.propTypes = {
   title: PropTypes.string,
+  className: PropTypes.string,
 };
 Header.defaultProps = {
   title: '',
+  className: '',
 };
 
 export default Header;
