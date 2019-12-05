@@ -1,0 +1,37 @@
+.introduction {
+    display: block;
+    max-width:900px;
+    margin: 0px auto;
+    padding: 5px 20px;
+
+    @include mq(mobile) {
+        margin: 0px auto;
+        padding: 15px 40px;
+    }
+
+    &__headline {
+        font-weight: bold;
+        font-size: map-get($fs, l);
+    }
+
+    &__place {
+        font-size: map-get($fs, xxs);
+        color: nth($gray, 2)
+    }
+
+    &__place-icon {
+        margin-right: 6px;
+    }
+
+    &__place-text {}
+
+    &__paragraph {
+        margin: 25px 0px;
+    }
+
+    &__quote {
+        max-width: 400px;
+        margin: 0px 0px 35px 25px;
+    }
+
+}

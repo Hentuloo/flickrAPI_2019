@@ -1,0 +1,7 @@
+.quote {
+    font-style: italic;
+    color: nth($gray, 2);
+    padding-left: 15px;
+
+    border-left: 4px solid nth($primary, 1);
+}
