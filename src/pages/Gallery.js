@@ -1,51 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPhotos } from 'store/actions/photosActions';
+
 import MainTemplate from 'templates/MainTemplate';
 import GalleryGrid from 'components/GalleryGrid';
 
-import { fetchJSONP } from 'config/Utils';
+import './Gallery.scss';
 import Constants from 'config/Constants';
 
-import './Gallery.scss';
-
 const Gallery = () => {
-  const [apiStatus, setApiStatus] = useState('wait');
+  const dispatch = useDispatch();
+  const { errorMessage, photoFeched, photos } = useSelector(
+    state => state.photosReducer,
+  );
 
   useEffect(() => {
-    fetchJSONP(Constants.API.marilynMonroePhotos, error => {
-      // calback (error,data)
-      if (error) {
-        return setApiStatus('failure');
-      }
-      return setApiStatus('success');
-    });
+    if (!photoFeched) {
+      dispatch(getPhotos());
+    }
   }, []);
 
   return (
     <MainTemplate title="Marilyn Monroe Gallery">
       <section className="galleryPage">
-        {apiStatus === 'wait' && (
+        {!photoFeched ? (
           <div
             className="galleryPage__spiner"
             title="Trwa ładowanie obrazków"
           >
             <span className="galleryPage__spiner-text sr-only">
-              Ładowanie obrazków...
+              {Constants.STATEMETS.waitForPhotos}
             </span>
             <div className="galleryPage__spiner-element spiner" />
           </div>
-        )}
-        {apiStatus === 'failure' && (
-          <div className="galleryPage__paragraph">
-            Błąd spróbuj później
+        ) : errorMessage ? (
+          <div className="galleryPage__error">
+            <i
+              className="fa fa-exclamation-triangle galleryPage__error-icon"
+              aria-hidden="true"
+            />
+            <span className="galleryPage__error-message">
+              {Constants.errorMessage[errorMessage] ||
+                Constants.errorMessage.default}
+            </span>
           </div>
+        ) : (
+          <GalleryGrid photos={photos} />
         )}
-        {apiStatus === 'success' && (
-          <div className="galleryPage__paragraph">
-            Działa poprawnie
-          </div>
-        )}
-
-        <GalleryGrid />
       </section>
     </MainTemplate>
   );

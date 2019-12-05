@@ -24,6 +24,7 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "no-nested-ternary": 0,
     "import/prefer-default-export": "off",
     "camelcase": 0,
     "jsx-a11y/label-has-associated-control": 0,

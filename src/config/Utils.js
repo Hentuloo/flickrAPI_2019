@@ -1,5 +1,5 @@
 import jsonp from 'jsonp';
 
-export const fetchJSONP = (url, callBack) => {
-  jsonp(url, { name: 'jsonFlickrFeed' }, callBack);
+export const fetchJSONP = (url, fnName, callBack) => {
+  jsonp(url, { name: fnName, timeout: 2000 }, callBack);
 };

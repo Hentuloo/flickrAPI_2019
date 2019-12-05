@@ -1,18 +1,41 @@
 .galleryPage {
+  width: 100%;
+  height: 100%;
+
+  &__spiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    height: 80%;
 
-    &__spiner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        padding-bottom: 100px;
-
-        &-text {}
-
-        &-element {}
+    &-text {
     }
 
+    &-element {
+    }
+  }
+
+  &__error {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: map-get($fs, m);
+    text-align: center;
+
+    @include mq(mobile) {
+      flex-direction: row;
+    }
+
+    &-icon {
+      margin-right: 20px;
+      font-size: 80px;
+      color: nth($red, 1);
+    }
+
+    &-message {
+    }
+  }
 }

@@ -11,12 +11,20 @@
     grid-template-rows: 30vh 70px 1fr;
   }
 
-  &__header {}
+  &__header {
+  }
 
-  &__navigation {}
+  &__navigation {
+  }
 
   &__content {
     display: block;
-    margin-top: 20px;
+    max-width: 900px;
+    margin: 20px auto 0px;
+    padding: 5px 20px;
+
+    @include mq(mobile) {
+      padding: 15px 40px;
+    }
   }
 }

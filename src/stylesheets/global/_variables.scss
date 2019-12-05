@@ -3,21 +3,24 @@ $black: (rgb(0, 0, 0));
 $white: (rgb(255, 255, 255), rgba(255, 255, 255, 0.719));
 $primary: (rgb(122, 214, 187), rgb(107, 201, 173));
 $gray: (rgb(242, 242, 242), rgb(150, 150, 150), rgb(204, 203, 203));
+$red: (rgb(192, 52, 52));
 
 // Font sizes
-$fs: (xxs: 1.2em,
-   xs: 1.4em,
-   s: 1.5em,
-   m: 1.8em,
-   l: 2.1em,
-   xl: 2.4em,
-   xxl: 3.2em,
-   xxxl: 3.8em,
+$fs: (
+  xxs: 1.2em,
+  xs: 1.4em,
+  s: 1.5em,
+  m: 1.8em,
+  l: 2.1em,
+  xl: 2.4em,
+  xxl: 3.2em,
+  xxxl: 3.8em,
 );
 
-$breakPoints: (mobile: '(min-width: 460px)',
-   tablet: '(min-width: 670px)',
-   desktop: '(min-width:1024px)',
-   large: '(min-width:1240px)',
-   xlarge: '(min-width:1400px)',
+$breakPoints: (
+  mobile: '(min-width: 460px)',
+  tablet: '(min-width: 670px)',
+  desktop: '(min-width:1024px)',
+  large: '(min-width:1240px)',
+  xlarge: '(min-width:1400px)',
 );

@@ -13,4 +13,11 @@ export default {
     marilynMonroePhotos:
       'https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=marilynmonro',
   },
+  STATEMETS: {
+    waitForPhotos: 'Ładowanie obrazków...',
+  },
+  errorMessage: {
+    Timeout: 'Błąd! Spróbuj później (Timeout)',
+    default: 'Błąd! Przepraszamy za utrudnienia',
+  },
 };
