@@ -29,6 +29,9 @@ const Introduction = () => {
         </blockquote>
         <p className="introduction__paragraph">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Aliquam nisi nesciunt commodi Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Aliquam nisi nesciunt commodi
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Aliquam nisi nesciunt commodi
         </p>
       </section>
