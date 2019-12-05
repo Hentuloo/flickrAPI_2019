@@ -1,5 +1,6 @@
 .mainTemplate {
   display: grid;
+  min-height: 100vh;
   grid-template-rows: 30vh 50px 1fr;
 
   @include mq(tablet) {
@@ -15,6 +16,7 @@
   &__navigation {}
 
   &__content {
+    display: block;
     margin-top: 20px;
   }
 }

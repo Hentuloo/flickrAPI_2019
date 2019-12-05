@@ -1,0 +1,18 @@
+.galleryPage {
+    width: 100%;
+    height: 100%;
+
+    &__spiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 100px;
+
+        &-text {}
+
+        &-element {}
+    }
+
+}

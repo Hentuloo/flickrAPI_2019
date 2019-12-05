@@ -1,0 +1,25 @@
+.spiner {
+    width: 60px;
+    height: 60px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid nth($primary, 1);
+    border-right: 4px solid nth($primary, 1);
+    border-radius: 50%;
+    transform: rotate(0%);
+    animation: spinerAnimation 1.6s infinite both;
+}
+
+@keyframes spinerAnimation {
+    0% {
+        transform: rotate(0%);
+    }
+
+    50% {
+        transform: rotate(300deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
