@@ -9,4 +9,8 @@ export default {
       name: 'Galeria',
     },
   },
+  API: {
+    marilynMonroePhotos:
+      'https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=marilynmonro',
+  },
 };
