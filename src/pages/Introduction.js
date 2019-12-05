@@ -6,7 +6,7 @@ import './Introduction.scss';
 const Introduction = () => {
   return (
     <MainTemplate title="About Marilyn Monroe">
-      <section className="introduction">
+      <article className="introduction">
         <h2 className="introduction__headline">Marilyn Monroe</h2>
         <small className="introduction__place">
           <i
@@ -34,7 +34,7 @@ const Introduction = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Aliquam nisi nesciunt commodi
         </p>
-      </section>
+      </article>
     </MainTemplate>
   );
 };
