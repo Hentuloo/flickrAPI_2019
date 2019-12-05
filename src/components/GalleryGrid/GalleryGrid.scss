@@ -1,0 +1,54 @@
+.gallery-grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+
+    @include mq(mobile) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include mq(tablet) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__item {
+        overflow: hidden;
+
+        &-link {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+
+            &:hover {
+                .gallery-grid__item-icon {
+                    transform: translateX(30%);
+                }
+            }
+
+        }
+
+        &-image {
+            max-width: 100%;
+        }
+
+        &-icon {
+            position: absolute;
+            bottom: 5%;
+            right: 0%;
+            font-size: 35px;
+            padding: 5px 35px 5px 10px;
+            border-radius: 5px;
+            color: nth($white, 1);
+            background-color: nth($primary, 1);
+            transform: translateX(100%);
+            transition: transform 0.2s ease-out;
+        }
+
+
+    }
+
+
+}

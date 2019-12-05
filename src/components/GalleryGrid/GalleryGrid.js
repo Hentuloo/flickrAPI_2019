@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import Constants from 'config/Constants';
+import Image from './Image';
 
 const GalleryGrid = ({ className, photos }) => {
-  console.log('photos');
-  console.log(photos);
   return (
-    <div className={cx(className, ' gallery')}>
-      <span>GGGGAsdf</span>
-      <span>GGGGAsdf</span>
+    <div className={cx(className, ' gallery-grid')}>
+      {photos.length > 0 ? (
+        photos.map(photo => <Image key={photo.link} data={photo} />)
+      ) : (
+        <h3>{Constants.STATEMETS.lackOfPhotos}</h3>
+      )}
     </div>
   );
 };

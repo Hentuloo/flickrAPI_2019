@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getPhotos } from 'store/actions/photosActions';
 
 import MainTemplate from 'templates/MainTemplate';
-import GalleryGrid from 'components/GalleryGrid';
+import GalleryGrid from 'components/GalleryGrid/GalleryGrid';
 
 import './Gallery.scss';
 import Constants from 'config/Constants';
@@ -45,7 +45,10 @@ const Gallery = () => {
             </span>
           </div>
         ) : (
-          <GalleryGrid photos={photos} />
+          <GalleryGrid
+            className="galleryPage__images"
+            photos={photos.slice(0, 9)}
+          />
         )}
       </section>
     </MainTemplate>
