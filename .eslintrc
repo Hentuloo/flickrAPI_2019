@@ -24,6 +24,9 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "no-nested-ternary": 0,
+    "import/prefer-default-export": "off",
+    "camelcase": 0,
     "jsx-a11y/label-has-associated-control": 0,
     "class-methods-use-this": 1,
     "jsx-a11y/no-noninteractive-element-to-interactive-role": 1,
