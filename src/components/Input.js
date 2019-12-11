@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 
 import Downshift from 'downshift';
 
+const Wrapper = styled.div`
+  position: relative;
+`;
 const InputField = styled.input`
   width: 100%;
-  padding: 15px 13px 15px 30px;
+  padding: 15px 55px 15px 30px;
   border: none;
   border-radius: 5px;
   font-size: ${({ theme }) => theme.fs.s};
@@ -59,6 +62,13 @@ const ImageWrapper = styled.div`
 const ItemName = styled.span`
   text-transform: uppercase;
 `;
+const Icon = styled.span`
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: ${({ theme }) => theme.fs.m};
+  cursor: pointer;
+`;
 
 const Input = ({ items, placeholder }) => {
   const [inputState, changeInputState] = useState('');
@@ -90,47 +100,63 @@ const Input = ({ items, placeholder }) => {
         openMenu,
       }) => (
         <div>
-          <InputField
-            {...getInputProps({
-              onFocus: openMenu,
-            })}
-            type="text"
-            placeholder={placeholder}
-          />
-          <ListWrapper {...getMenuProps()}>
-            {isOpen
-              ? items
-                  .filter(
-                    item =>
-                      !inputValue ||
-                      item.name
-                        .toLowerCase()
-                        .includes(inputValue.toLowerCase()),
-                  )
-                  .splice(0, 4)
-                  .map((item, index) => {
-                    const { name, image } = item;
-                    return (
-                      <ListElement
-                        key={name}
-                        {...getItemProps({
-                          key: name,
-                          index,
-                          item,
-                        })}
-                      >
-                        {image && (
-                          <ImageWrapper>
-                            <img src={image} alt={name} />
-                          </ImageWrapper>
-                        )}
+          <Wrapper>
+            <InputField
+              {...getInputProps({
+                onFocus: openMenu,
+              })}
+              type="text"
+              placeholder={placeholder}
+            />
+            {inputValue ? (
+              <Icon
+                className="fa fa-times"
+                aria-hidden="true"
+                onClick={() => changeInputState('')}
+              />
+            ) : (
+              <Icon
+                className="fa fa-search"
+                aria-hidden="true"
+                onClick={openMenu}
+              />
+            )}
 
-                        <ItemName>{name}</ItemName>
-                      </ListElement>
-                    );
-                  })
-              : null}
-          </ListWrapper>
+            <ListWrapper {...getMenuProps()}>
+              {isOpen
+                ? items
+                    .filter(
+                      item =>
+                        !inputValue ||
+                        item.name
+                          .toLowerCase()
+                          .includes(inputValue.toLowerCase()),
+                    )
+                    .splice(0, 4)
+                    .map((item, index) => {
+                      const { name, image } = item;
+                      return (
+                        <ListElement
+                          key={name}
+                          {...getItemProps({
+                            key: name,
+                            index,
+                            item,
+                          })}
+                        >
+                          {image && (
+                            <ImageWrapper>
+                              <img src={image} alt={name} />
+                            </ImageWrapper>
+                          )}
+
+                          <ItemName>{name}</ItemName>
+                        </ListElement>
+                      );
+                    })
+                : null}
+            </ListWrapper>
+          </Wrapper>
         </div>
       )}
     </Downshift>
