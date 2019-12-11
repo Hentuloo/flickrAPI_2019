@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+ 
  html {
     font-size: 62.5%;
 }
@@ -10,10 +12,9 @@ body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    font-family: $font-second;
-    font-weight: $fw-bold;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     font-size: 1.6rem;
-    background-color: nth($gray, 2);
 
     ${({ theme }) => theme.mediaQuery.md}{
          font-size: 2.1rem;
