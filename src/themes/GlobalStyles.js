@@ -14,13 +14,33 @@ body {
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 
     ${({ theme }) => theme.mediaQuery.md}{
-         font-size: 2.1rem;
+         font-size: 1.8rem;
     }
     ${({ theme }) => theme.mediaQuery.lg}{
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
+}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
 }
 `;

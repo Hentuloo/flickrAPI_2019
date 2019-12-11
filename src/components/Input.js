@@ -4,12 +4,48 @@ import PropTypes from 'prop-types';
 
 import Downshift from 'downshift';
 
+const InputField = styled.input`
+  width: 100%;
+  padding: 15px 13px 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: ${({ theme }) => theme.fs.s};
+  background-color: ${({ theme }) => theme.color.white};
+`;
+const ListWrapper = styled.ul`
+  width: 100%;
+  max-height: 170px;
+  border-radius: 0px 0px 5px 5px;
+  list-style: none;
+  font-size: ${({ theme }) => theme.fs.s};
+  background-color: ${({ theme }) => theme.color.white};
+  overflow-y: auto;
+  ${({ theme }) => theme.mediaQuery.sm} {
+    max-height: 250px;
+  }
+  ${({ theme }) => theme.mediaQuery.lg} {
+    max-height: 400px;
+  }
+`;
+
+const ListElement = styled.li`
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: ${({ theme }) => theme.color.primary[0]};
+  }
+`;
+
 const ImageWrapper = styled.div`
   position: relative;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: 2px ${({ theme }) => theme.color.gray[0]} solid;
   overflow: hidden;
+  margin: 0px 20px;
   img {
     position: absolute;
     width: 100%;
@@ -18,6 +54,10 @@ const ImageWrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+`;
+
+const ItemName = styled.span`
+  text-transform: uppercase;
 `;
 
 const Input = ({ items, placeholder }) => {
@@ -50,14 +90,14 @@ const Input = ({ items, placeholder }) => {
         openMenu,
       }) => (
         <div>
-          <input
+          <InputField
             {...getInputProps({
               onFocus: openMenu,
             })}
             type="text"
             placeholder={placeholder}
           />
-          <ul {...getMenuProps()}>
+          <ListWrapper {...getMenuProps()}>
             {isOpen
               ? items
                   .filter(
@@ -67,10 +107,11 @@ const Input = ({ items, placeholder }) => {
                         .toLowerCase()
                         .includes(inputValue.toLowerCase()),
                   )
+                  .splice(0, 4)
                   .map((item, index) => {
                     const { name, image } = item;
                     return (
-                      <li
+                      <ListElement
                         key={name}
                         {...getItemProps({
                           key: name,
@@ -78,16 +119,18 @@ const Input = ({ items, placeholder }) => {
                           item,
                         })}
                       >
-                        <ImageWrapper>
-                          <img src={image} alt={name} />
-                        </ImageWrapper>
+                        {image && (
+                          <ImageWrapper>
+                            <img src={image} alt={name} />
+                          </ImageWrapper>
+                        )}
 
-                        {name}
-                      </li>
+                        <ItemName>{name}</ItemName>
+                      </ListElement>
                     );
                   })
               : null}
-          </ul>
+          </ListWrapper>
         </div>
       )}
     </Downshift>
