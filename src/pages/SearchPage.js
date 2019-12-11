@@ -13,10 +13,17 @@ const Wrapper = styled.div`
 `;
 
 const SearchPage = () => {
+  const handleSearch = ({ name }) => {
+    console.log(name);
+  };
   return (
     <MainTemplate>
       <Wrapper>
-        <Input items={Countries} placeholder="Szukaj miast w..." />
+        <Input
+          items={Countries}
+          placeholder="Szukaj miast w..."
+          onSelect={handleSearch}
+        />
       </Wrapper>
     </MainTemplate>
   );

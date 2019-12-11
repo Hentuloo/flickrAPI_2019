@@ -70,7 +70,7 @@ const Icon = styled.span`
   cursor: pointer;
 `;
 
-const Input = ({ items, placeholder }) => {
+const Input = ({ items, placeholder, onSelect }) => {
   const [inputState, changeInputState] = useState('');
 
   const handleChange = value => {
@@ -90,6 +90,7 @@ const Input = ({ items, placeholder }) => {
         }
       }}
       itemToString={item => (item ? item.name : '')}
+      onSelect={onSelect}
     >
       {({
         getInputProps,
@@ -165,6 +166,7 @@ const Input = ({ items, placeholder }) => {
 
 Input.propTypes = {
   placeholder: PropTypes.string,
+  onSelect: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
