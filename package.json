@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
+    "history": "^4.10.1",
     "jsonp": "^0.2.1",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
@@ -38,6 +39,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/react": "^9.4.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",

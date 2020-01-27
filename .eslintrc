@@ -24,6 +24,12 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
     "no-nested-ternary": 0,
     "import/prefer-default-export": "off",
     "camelcase": 0,
